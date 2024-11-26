@@ -1,4 +1,4 @@
-[![Coverage Status](https://coveralls.io/repos/github/soronen/COMP.SE.200-2024-2025-1/badge.svg)](https://coveralls.io/github/soronen/COMP.SE.200-2024-2025-1)
+[![Coverage Status](https://coveralls.io/repos/github/soronen/COMP.SE.200-2024-2025-1/badge.svg?branch=main)](https://coveralls.io/github/soronen/COMP.SE.200-2024-2025-1?branch=main)
 
 # Student template
 
