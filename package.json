@@ -23,7 +23,7 @@
   "scripts": {
     "test": "mocha",
     "coverage": "c8 mocha",
-    "coveralls": "c8 --reporter=text-lcov mocha | coveralls"
+    "coveralls": "c8 --reporter=text-lcov mocha"
   },
   "author": "",
   "license": "MIT",
