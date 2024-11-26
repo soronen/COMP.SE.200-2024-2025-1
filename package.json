@@ -4,14 +4,31 @@
   "description": "",
   "main": "index.js",
   "type": "module",
+  "c8": {
+    "all": true,
+    "reporter": [
+      "text",
+      "html",
+      "lcov"
+    ],
+    "exclude": [
+      "test/**/*.js",
+      "src/.internal/**/*.js"
+    ],
+    "include": [
+      "src/**/*.js"
+    ],
+    "report-dir": "./coverage"
+  },
   "scripts": {
     "test": "mocha",
-    "coverage": "nyc mocha",
-    "coveralls": "nyc npm test && nyc report --reporter=text-lcov"
+    "coverage": "c8 mocha",
+    "coveralls": "c8 --reporter=text-lcov mocha | coveralls"
   },
   "author": "",
   "license": "MIT",
   "devDependencies": {
+    "c8": "^10.1.2",
     "chai": "^5.1.2",
     "coveralls": "^3.1.1",
     "mocha": "^10.8.2",
