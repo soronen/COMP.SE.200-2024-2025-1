@@ -7,28 +7,29 @@ name: CI Pipeline
 on: [push, pull_request]
 
 jobs:
-  coverage:
+  build:
+
     # run build on latest ubuntu
     runs-on: ubuntu-latest
 
     steps:
-      # this will check out the current branch (https://github.com/actions/checkout#Push-a-commit-using-the-built-in-token)
-      - uses: actions/checkout@v3
-      # installing Node
-      - name: Use Node.js 22.x
-        uses: actions/setup-node@v3
-        with:
-          # this will use the latest Node 16 version
-          node-version: 22.x
-      # install dependencies using clean install to avoid package lock updates
-      - run: npm ci
-      # build the project if necessary
-      - run: npm run build --if-present
-      # finally run the tests
-      - run: npm run coveralls
+    # this will check out the current branch (https://github.com/actions/checkout#Push-a-commit-using-the-built-in-token)
+    - uses: actions/checkout@v3
+    # installing Node
+    - name: Use Node.js 22
+      uses: actions/setup-node@v3
+      with:
+        # this will use the latest Node 16 version
+        node-version: 22
+    # install dependencies using clean install to avoid package lock updates
+    - run: npm ci
+    # build the project if necessary
+    - run: npm run build --if-present
+    # finally run the tests
+    - run: npm run coverage
 
-      # Save coverage report in Coveralls
-      - name: Coveralls GitHub Action
-        uses: coverallsapp/github-action@v2.3.4
-        with:
-          github-token: ${{ secrets.GITHUB_TOKEN }}
+    # Save coverage report in Coveralls
+    - name: Coveralls
+      uses: coverallsapp/github-action@master
+      with:
+        github-token: ${{ secrets.GITHUB_TOKEN }}
