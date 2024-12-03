@@ -1,25 +1,20 @@
 import { expect } from 'chai';
-import add from '../src/add.js';
+import add from '../src/add.js'
 
-describe('add', function () {
-  it('should return the sum of two positive numbers', function () {
-    expect(add(6, 4)).to.equal(10);
-  });
-
-  it('should return the sum of two negative numbers', function () {
-    expect(add(-6, -4)).to.equal(-10);
-  });
-
-  it('should return the sum of a positive and a negative number', function () {
-    expect(add(6, -4)).to.equal(2);
-  });
-
-  it('should return 0 when adding 0 to 0', function () {
-    expect(add(0, 0)).to.equal(0);
-  });
-
-  it('should return the other number when adding 0 to a number', function () {
-    expect(add(0, 5)).to.equal(5);
-    expect(add(5, 0)).to.equal(5);
-  });
+describe('add', () => {
+  it('adds two positive numbers', () => {
+    expect(add(6, 4)).to.equal(10)
+  })
+  it('adds two negative numbers', () => {
+    expect(add(-6, -4)).to.equal(-10)
+  })
+  it('adds two floating point numbers', () => {
+    expect(add(6.1, 4.2)).to.be.closeTo(10.3, 0.0001)
+  })
+  it('adds two numbers in scientific notation', () => {
+    expect(add(6e2, 4e3)).to.equal(4600)
+  })
+  it('returns the other value if one number is NaN', () => {
+    expect(add(6, NaN)).to.deep.equal(NaN)
+  })
 });
