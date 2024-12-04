@@ -1,5 +1,5 @@
 import { expect } from 'chai';
-import defaultToAny from '../src/defaultTo.js'
+import defaultToAny from '../src/defaultToAny.js'
 
 describe('defaultToAny', () => {
     it('Should return first value that is 1', () => {
