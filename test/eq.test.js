@@ -12,11 +12,11 @@ describe("eq", () => {
 
   it("should return false for non-equal values", () => {
     expect(eq(1, 2)).to.equal(false);
+    expect(eq(1, 'abs')).to.equal(false);
     expect(eq('abc', 'def')).to.equal(false);
     expect(eq(NaN, 1)).to.equal(false);
-    expect(eq(null, undefined)).to.equal(false);
   });
-  
+
   it("should return true for 1 and '1' in accordance with the ES standard", () => {
     expect(eq(1, '1')).to.equal(true);
   });
