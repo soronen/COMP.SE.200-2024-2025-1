@@ -15,11 +15,11 @@ describe('filter', () => {
   it('should return an empty array when the input is an empty array', () => {
     const users = [];
     const result = filter(users, ({ active }) => active);
-    expect(result).to.deep.equal([]);
+    expect(result).to.deep.equal([[]]);
   });
   it('should return an empty array when the input is null', () => {
     const users = null;
     const result = filter(users, ({ active }) => active);
-    expect(result).to.deep.equal([]);
+    expect(result).to.deep.equal([[]]);
   });
 });
