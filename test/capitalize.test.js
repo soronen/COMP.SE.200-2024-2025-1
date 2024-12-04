@@ -11,4 +11,22 @@ describe("capitalize", () => {
     const result = capitalize("FRED");
     expect(result).to.equal("Fred");
   });
+  it('Works on a single word', () => {
+    expect(capitalize('word')).to.equal('Word')
+  })
+  it('Works on two words', () => {
+    expect(capitalize('word word')).to.equal('Word word')
+  })
+  it('Works on an uppercase Word', () => {
+    expect(capitalize('Word')).to.equal('Word')
+  })
+  it('Works a non ascii character', () => {
+    expect(capitalize('ålesund')).to.equal('Ålesund')
+  })
+  it('Does nothing for chinese characters', () => {
+    expect(capitalize('裁判')).to.equal('裁判')
+  })
+  it('Does nothing for numbers', () => {
+    expect(capitalize('42')).to.equal('42')
+  })
 });
