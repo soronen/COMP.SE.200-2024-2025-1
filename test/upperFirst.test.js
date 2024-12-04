@@ -1,7 +1,7 @@
 import { expect } from 'chai';
 import upperFirst from '../src/upperFirst.js'
 
-describe('divide', () => {
+describe('upperFirst', () => {
   it('Works on a single word', () => {
     expect(upperFirst('word')).to.equal('Word')
   })
