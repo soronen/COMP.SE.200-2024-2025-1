@@ -5,6 +5,9 @@ describe('drop', () => {
   it('Should return second element if not given number of elements to drop', () => {
     expect(drop([2, 1])).to.deep.equal([1])
   })
+  it('Should return whole array if number is 0', () => {
+    expect(drop([2, 1, 3], 0)).to.deep.equal([2, 1, 3])
+  })
   it('Should return last element if array size -1', () => {
     expect(drop([2, 1, 3], 2)).to.deep.equal([3])
   })
@@ -26,4 +29,9 @@ describe('drop', () => {
   it('Should return empty array if array and number is null', () => {
     expect(drop(null, null)).to.deep.equal([])
   })
+  /*
+  it('Should return whole array if number is negative number', () => {
+    expect(drop(drop([2, 1, 3], -2))).to.deep.equal([2, 1, 3])
+  })
+  */
 });
